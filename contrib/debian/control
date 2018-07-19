@@ -1,0 +1,68 @@
+Source: gentarium
+Section: utils
+Priority: optional
+Maintainer: Development team <development@gtmcoin.io>
+Uploaders: Development team <development@gtmcoin.io>
+Build-Depends: debhelper,
+ devscripts,
+ automake,
+ libtool,
+ bash-completion,
+ libdb4.8++-dev,
+ libssl-dev,
+ pkg-config,
+ libevent-dev,
+ libboost-system1.48-dev | libboost-system-dev (>> 1.35),
+ libboost-filesystem1.48-dev | libboost-filesystem-dev (>> 1.35),
+ libboost-program-options1.48-dev | libboost-program-options-dev (>> 1.35),
+ libboost-thread1.48-dev | libboost-thread-dev (>> 1.35),
+ libboost-test1.48-dev | libboost-test-dev (>> 1.35),
+ libboost-chrono1.48-dev | libboost-chrono-dev (>> 1.35),
+ qt4-qmake,
+ libqt4-dev,
+ libqrencode-dev,
+ libprotobuf-dev, protobuf-compiler,
+ python
+Standards-Version: 3.9.2
+Homepage: https://www.gtmcoin.io/
+Vcs-Git: git://https://github.com/genterium-project/gentarium.git
+Vcs-Browser: https://https://github.com/genterium-project/gentarium
+
+Package: gentariumd
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: peer-to-peer network based digital currency - daemon
+ Gentarium is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Gentarium uses peer-to-peer
+ technology to operate with no central authority: managing transactions
+ and issuing money are carried out collectively by the network. Gentarium Core
+ is the name of the open source software which enables the use of this currency.
+ .
+ This package provides the daemon, gentariumd, and the CLI tool
+ gentarium-cli to interact with the daemon.
+
+Package: gentarium-qt
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: peer-to-peer network based digital currency - Qt GUI
+ Gentarium is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Gentarium uses peer-to-peer
+ technology to operate with no central authority: managing transactions
+ and issuing money are carried out collectively by the network. Gentarium Core
+ is the name of the open source software which enables the use of this currency.
+ .
+ This package provides Gentarium-Qt, a GUI for Gentarium based on Qt.
+
+Package: gentarium-tx
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: peer-to-peer digital currency - standalone transaction tool
+ Gentarium is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Gentarium uses peer-to-peer
+ technology to operate with no central authority: managing transactions
+ and issuing money are carried out collectively by the network. Gentarium Core
+ is the name of the open source software which enables the use of this currency.
+ .
+ This package provides gentarium-tx, a command-line transaction creation
+ tool which can be used without a gentarium daemon.  Some means of
+ exchanging minimal transaction data with peers is still required.

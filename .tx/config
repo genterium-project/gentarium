@@ -1,0 +1,7 @@
+[main]
+host = https://www.transifex.com
+
+[gentarium.qt-translation-012x]
+file_filter = src/qt/locale/gentarium_<lang>.ts
+source_file = src/qt/locale/gentarium_en.ts
+source_lang = en

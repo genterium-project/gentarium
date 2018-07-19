@@ -1,0 +1,25 @@
+/* XPM */
+static char *_faceae5b4134c20fdeeee7b699a4c84[] = {
+/* columns rows colors chars-per-pixel */
+"16 16 3 1 ",
+"  c #E45F55",
+". c #E65F55",
+"X c None",
+/* pixels */
+"XXXXXXXXXXXXXXXX",
+"XXXXXXX..XXXXXXX",
+"XXXXXXX..XXXXXXX",
+"XXXXXXXXXXXXXXXX",
+"XXXX.......XXXXX",
+"XXX.XXXXX.XX.XXX",
+"XXXX.XX..XX.XXXX",
+"XXXX.X....X.XXXX",
+"..XXXX.XX.X.X..X",
+"X.XXXX.XX.X.XX.X",
+"XXXX.X...XX.XXXX",
+"XXX.XXXXXXX..XXX",
+"XXXXX......XXXXX",
+"XXXX.XXXXX.XXXXX",
+"XXXXXXXXXXXXXXXX",
+"XXXXXXXXXXXXXXXX"
+};
