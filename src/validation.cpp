@@ -1253,6 +1253,14 @@ CAmount GetMasternodePayment(int nHeight, CAmount blockValue)
     return reward;
 }
 
+CAmount GetFounderPayment(int nHeight){
+    if(nHeight > 1) {
+        return FOUNDER_REWARD * COIN;
+    }
+
+    return 0;
+}
+
 bool IsInitialBlockDownload()
 {
     static bool lockIBDState = false;
