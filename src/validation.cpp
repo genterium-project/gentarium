@@ -1231,24 +1231,26 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
         return PREMINE_REWARD * COIN;
     }
 
+    int64_t blockReward = nPrevHeight >= DECREASE_BLOCK ? DECREASE_BLOCK_REWARD : SINGLE_BLOCK_REWARD;
+
     if(nPrevHeight <= consensusParams.nMasternodePaymentsStartBlock || nPrevHeight > consensusParams.nSubsidyHalvingInterval){
-        return ((SINGLE_BLOCK_REWARD >> 1) + FOUNDER_REWARD) * COIN;
+        return ((blockReward >> 1) + FOUNDER_REWARD) * COIN;
     }
 
-    return  (SINGLE_BLOCK_REWARD * COIN);
+    LogPrintf("Validation::GetBlockSubsidy - %d reward for block #%d\n", blockReward, nPrevHeight + 1);
+
+    return  (blockReward * COIN);
 }
 
 CAmount GetMasternodePayment(int nHeight, CAmount blockValue)
 {
-    return (blockValue  - FOUNDER_REWARD * COIN) / 2;
-}
-
-CAmount GetFounderPayment(int nHeight){
-    if(nHeight > 1) {
-        return FOUNDER_REWARD * COIN;
+    CAmount reward = (blockValue - FOUNDER_REWARD * COIN) / 2;
+    if(nHeight > DECREASE_BLOCK) {
+        reward = blockValue - ((blockValue - FOUNDER_REWARD * COIN) / 6) - FOUNDER_REWARD * COIN;
     }
 
-    return 0;
+    LogPrintf("Validation::GetMasternodePayment - masternodes reward is %d for block #%d[%d]\n", reward, nHeight, blockValue);
+    return reward;
 }
 
 bool IsInitialBlockDownload()
@@ -1604,7 +1606,7 @@ bool AbortNode(CValidationState& state, const std::string& strMessage, const std
 }
 
 } // anon namespace
-
+s
 enum DisconnectResult
 {
     DISCONNECT_OK,      // All good.
