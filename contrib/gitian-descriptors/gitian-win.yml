@@ -23,7 +23,7 @@ packages:
 - "python"
 reference_datetime: "2018-07-18 00:00:00"
 remotes:
-- "url": "https://github.com/dimon-280894/simple-coin.git"
+- "url": "https://github.com/genterium-project/gentarium.git"
   "dir": "gentarium"
 files: []
 script: |
