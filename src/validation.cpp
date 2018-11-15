@@ -1606,7 +1606,7 @@ bool AbortNode(CValidationState& state, const std::string& strMessage, const std
 }
 
 } // anon namespace
-s
+
 enum DisconnectResult
 {
     DISCONNECT_OK,      // All good.
